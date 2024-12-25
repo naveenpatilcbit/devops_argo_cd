@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: argo-cd-workflow-rolebinding
+  namespace: demo # Make sure this matches your namespace
+subjects:
+  - kind: ServiceAccount
+    name: default # The service account name
+    namespace: demo # The namespace of the service account
+roleRef:
+  kind: Role
+  name: argo-cd-workflow-role # The Role we created earlier
+  apiGroup: rbac.authorization.k8s.io
