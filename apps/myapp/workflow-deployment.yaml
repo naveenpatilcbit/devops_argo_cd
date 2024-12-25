@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
   name: my-workflow
+  namespace: demo1
   annotations:
     argocd.argoproj.io/hook: PostSync # Tells Argo CD to run this after syncing
 spec:
