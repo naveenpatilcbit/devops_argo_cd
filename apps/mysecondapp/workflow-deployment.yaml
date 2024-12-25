@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: my-workflow
+  namespace: demo
+  annotations:
+    argocd.argoproj.io/hook: PostSync # Tells Argo CD to run this after syncing
+spec:
+  entrypoint: hello-world
+  templates:
+    - name: hello-world
+      container:
+        image: alpine:latest
+        command: [echo]
+        args: ["Hello from Argo Workflow!"]
