@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: CronWorkflow
 metadata:
   name: hello-cron
-  namespace: argo # Ensure this matches where Argo Workflows is installed
+  namespace: demo # Ensure this matches where Argo Workflows is installed
 spec:
   schedule: "* * * * *" # Runs every minute
   concurrencyPolicy: "Allow" # Allows overlapping runs
