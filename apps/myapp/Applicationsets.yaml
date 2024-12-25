@@ -17,7 +17,7 @@ spec:
     metadata:
       name: "{{namespace}}-app"
     spec:
-      project: your-project
+      project: default
       source:
         repoURL: "{{repoURL}}"
         targetRevision: main
