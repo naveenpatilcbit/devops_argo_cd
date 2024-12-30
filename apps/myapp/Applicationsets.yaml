@@ -13,6 +13,9 @@ spec:
           - namespace: science
             repoURL: https://github.com/naveenpatilcbit/devops_argo_cd/
             path: apps/mythirdapp
+          - namespace: demo
+            repoURL: https://github.com/naveenpatilcbit/devops_argo_cd/
+            path: apps/CanaryDeployment
   template:
     metadata:
       name: "{{namespace}}-app"
