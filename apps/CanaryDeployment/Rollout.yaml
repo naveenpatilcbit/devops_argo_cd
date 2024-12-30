@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: canary-rollout
+  namespace: demo
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: canary-app
+  template:
+    metadata:
+      labels:
+        app: canary-app
+    spec:
+      containers:
+        - name: keycloak
+          image: keycloak:latest # Your new version
+          ports:
+            - containerPort: 80
+  strategy:
+    canary:
+      canaryService: canary-service
+      stableService: stable-service
+      steps:
+        - setWeight: 25 # 25% traffic to the new version
+        - pause:
+            duration: 60 # Pause for 60 seconds, watch metrics/logs
+        - setWeight: 50 # If still good, shift 50% traffic
+        - pause:
+            duration: 60
+        - setWeight: 100 # Shift all traffic to new version if no issues
