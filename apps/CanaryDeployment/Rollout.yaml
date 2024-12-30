@@ -40,8 +40,8 @@ spec:
         app: canary-app
     spec:
       containers:
-        - name: keycloak
-          image: quay.io/keycloak/keycloak:latest # Your new version
+        - name: rethinkdb
+          image: rethinkdb:latest # Your new version
           ports:
             - containerPort: 80
   strategy:
