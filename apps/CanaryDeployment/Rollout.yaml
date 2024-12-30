@@ -5,11 +5,11 @@ metadata:
   namespace: demo
 spec:
   selector:
-    app: canary-app    # stable pods must have this label
+    app: canary-app # stable pods must have this label
   ports:
-  - name: http
-    port: 8083
-    targetPort: 8080
+    - name: http
+      port: 8083
+      targetPort: 8080
 ---
 apiVersion: v1
 kind: Service
@@ -18,12 +18,12 @@ metadata:
   namespace: demo
 spec:
   selector:
-    app: canary-app    # canary pods will temporarily share these labels
+    app: canary-app # canary pods will temporarily share these labels
   ports:
-  - name: http
-    port: 8083
-    targetPort: 8080
-
+    - name: http
+      port: 8083
+      targetPort: 8080
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
