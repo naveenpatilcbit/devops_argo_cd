@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: rethinkdb
-          image: rethinkdb:2.4.3 # Your new version
+          image: rethinkdb:latest # Your new version
           ports:
             - containerPort: 80
   strategy:
