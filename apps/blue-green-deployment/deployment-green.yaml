@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app-green
+  labels:
+    app: demo-app
+    version: green
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demo-app
+      version: green
+  template:
+    metadata:
+      labels:
+        app: demo-app
+        version: green
+    spec:
+      containers:
+        - name: demo-container
+          image: nginx:1.22
+          ports:
+            - containerPort: 80
