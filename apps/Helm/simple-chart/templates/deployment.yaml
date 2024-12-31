@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: { { include "hello-world-chart.fullname" . } }
+  name: { { include "simple-helm-chart.fullname" . } }
 spec:
   replicas: { { .Values.replicaCount } }
   selector:
     matchLabels:
-      app: { { include "hello-world-chart.name" . } }
+      app: { { include "simple-helm-chart.name" . } }
   template:
     metadata:
       labels:
-        app: { { include "hello-world-chart.name" . } }
+        app: { { include "simple-helm-chart.name" . } }
     spec:
       containers:
         - name: hello-world-container

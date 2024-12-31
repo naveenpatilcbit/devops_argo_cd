@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: simple-helm-chart
+  namespace: argocd # Ensure this matches the namespace where Argo CD is installed
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: "https://github.com/naveenpatilcbit/devops_argo_cd/"
+    targetRevision: "main"
+    path: "apps/Helm"
+    helm:
+      releaseName: hello-world
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
