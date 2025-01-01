@@ -13,6 +13,8 @@ spec:
     path: "apps/Helm/simple-chart"
     helm:
       releaseName: hello-world
+      valueFiles:
+        - "values.yaml"
   project: default
   syncPolicy:
     automated:
