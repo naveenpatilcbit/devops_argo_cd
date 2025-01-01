@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: simple-helm-app
 spec:
-  replicas: "{{ .Values.replicaCount }}"
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: simple-helm-app
@@ -16,5 +16,5 @@ spec:
         - name: hello-world-container
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
-            - containerPort: "{{ .Values.service.port }}"
-          imagePullPolicy: "{{ .Values.image.pullPolicy }}"
+            - containerPort: {{ .Values.service.port }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
