@@ -1,4 +1,4 @@
 apiVersion: v2
-name: hello-world-chart
+name: simple-helm-chart
 description: A minimal Helm chart to demonstrate Argo CD + Helm
 version: 0.1.0
