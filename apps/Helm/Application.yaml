@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: "https://github.com/naveenpatilcbit/devops_argo_cd/"
     targetRevision: "main"
-    path: "apps/Helm"
+    path: "apps/Helm/simple-chart"
     helm:
       releaseName: hello-world
   project: default
