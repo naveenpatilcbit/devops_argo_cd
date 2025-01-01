@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: { { include "simple-helm-chart.fullname" . } }
+  name: simple-helm-app
 spec:
   replicas: { { .Values.replicaCount } }
   selector:
     matchLabels:
-      app: { { include "simple-helm-chart.name" . } }
+      app: simple-helm-app
   template:
     metadata:
       labels:
-        app: { { include "simple-helm-chart.name" . } }
+        app: simple-helm-app
     spec:
       containers:
         - name: hello-world-container
