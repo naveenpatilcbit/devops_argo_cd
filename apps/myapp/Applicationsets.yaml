@@ -16,6 +16,9 @@ spec:
           - namespace: demo
             repoURL: https://github.com/naveenpatilcbit/devops_argo_cd/
             path: apps/CanaryDeployment
+          - namespace: dependency-chart
+            repoURL: https://github.com/naveenpatilcbit/devops_argo_cd/
+            path: apps/chart-dependency
   template:
     metadata:
       name: "{{namespace}}-app"
