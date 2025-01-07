@@ -1,0 +1,8 @@
+apiVersion: v2
+name: chart-using-template-chart
+description: A minimal Helm chart to demonstrate Argo CD + Helm
+version: 0.1.0
+dependencies:
+  - name: service-common
+    version: "1.0.0"
+    repository: "file://../template-chart"
