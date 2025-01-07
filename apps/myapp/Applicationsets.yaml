@@ -19,6 +19,9 @@ spec:
           - namespace: dependency-chart
             repoURL: https://github.com/naveenpatilcbit/devops_argo_cd/
             path: apps/chart-dependency
+          - namespace: example-template-chart
+            repoURL: https://github.com/naveenpatilcbit/devops_argo_cd/
+            path: apps/example-template-chart/demo-chart
   template:
     metadata:
       name: "{{namespace}}-app"
