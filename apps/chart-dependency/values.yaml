@@ -1,0 +1,17 @@
+# Parent values.yaml
+
+# Override Redis chart values
+redis:
+  auth:
+    enabled: true
+    password: "supersecretredis"
+
+# Override MySQL chart values
+mysql:
+  auth:
+    rootPassword: "supersecretroot"
+  primary:
+    resources:
+      requests:
+        memory: "512Mi"
+        cpu: "250m"
