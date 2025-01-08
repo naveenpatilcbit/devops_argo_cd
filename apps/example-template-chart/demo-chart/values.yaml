@@ -1,6 +1,7 @@
 service:
   type: ClusterIP
   httpPort: 8086
+  httpsPort: 8087
   name: service-using-template-chart
 myapp:
   name: abc
